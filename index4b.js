@@ -18,10 +18,11 @@ const filtrar = x => x.aprendiz === true;
     for (let i = 0; i < data.length; i++) {
         let respuestGithub = await fetch(`https://api.github.com/users/${data[i].user}/repos`)
         let usuarioGithub = await respuestGithub.json();
+        console.log(usuarioGithub)
         let array = []
         console.log(`Repositorios del user:"${data[i].user} que contienen "JavaScript" en su nombre:`)
         usuarioGithub.forEach(element => {
-            if(element.name.includes("javascript")){
+            if(element.name.includes("javascript") || element.name.includes("Javascript") || element.name.includes("JavaScript")){
                 array.push(element.name)
             }
         });
