@@ -24,12 +24,14 @@ const filtrar = x => x.aprendiz === true;
 
         let array = [] 
         usuarioGithub.forEach(element => {
-            array.push(element.name)
+            let separate = element.name.split("");
+            if(separate.length >5){
+                array.push(element.name)
+            }
         });
-        const separate = array.split("");
-        if(separate.length > 5){
-            console.log(array)
-        }
+        console.log(array)
+
+
     }
 
 })();
