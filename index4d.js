@@ -29,6 +29,7 @@ const filtrar = x => x.aprendiz === true;
                 array.push(element.name)
             }
         });
+        console.log(data[i].user)
         console.log(array)
 
 
