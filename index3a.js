@@ -11,6 +11,7 @@
             usuarioGithub.forEach(element => {
                 array.push(element.name)
             }); 
+            console.log(array)
         }
     }
 })();
