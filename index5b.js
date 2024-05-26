@@ -17,29 +17,27 @@ let filtro = x => x.aprendiz === true;
     },
 
     set: function(target, property, value){
-      if (property == "nombre" && value === value.toUpperCase()){
+      let separate = value.split(" ");
+      if (property == "nombre" && value === value.toUpperCase() && separate.length > 2){
         console.log(`Cambiando ${property} a Mayusculas`)
         return target[property] = value;
       }
       else{
-        console.log(`${property} no ha sido cambiado ya que solo se permiten mayusculas :)`)
+        console.log(`${property} no ha sido cambiado ya que solo se permiten mayusculas y con mas de 2 nombres :)`)
         return target[property] ;
       }
     }
   };
 
   for (let i = 0; i < user.length; i++) {
-    let separate = user[i].name.split(" ");
-    if(separate.length > 2){
-      let persona = {
-        nombre : user[i].name
-      }
-      let proxy = new  Proxy(persona, handler);
-      console.log(proxy.nombre)
-      proxy.nombre = user[i].name.toUpperCase();
-      console.log(proxy.nombre)
-      console.log("")
+    let persona = {
+      nombre : user[i].name
     }
+    let proxy = new  Proxy(persona, handler);
+    console.log(proxy.nombre)
+    proxy.nombre = user[i].name.toUpperCase();
+    console.log(proxy.nombre)
+    console.log("")
   }
 
 
