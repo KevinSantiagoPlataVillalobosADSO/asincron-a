@@ -18,7 +18,7 @@ let funcion_noasync = function(){
                     return usuarioGithub.json();
                 }) //se retorna todo estos resultados 
                 .then((data) => {
-
+                    //se imprime en un table nombre de usuario y el avatar c:
                     console.table([data.login, data.avatar_url])
                 })
             }
